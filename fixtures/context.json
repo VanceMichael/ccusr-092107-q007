@@ -1,0 +1,10 @@
+{
+  "domain": "airline-meal-fulfillment",
+  "version": 1,
+  "facts": [
+    "航司提供弃餐换里程或优惠券",
+    "特殊旅客仍享有免费特殊餐保障",
+    "延误场景可向旅客发放机场电子餐券"
+  ],
+  "sample_id": "sample-007"
+}
