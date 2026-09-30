@@ -1,0 +1,4 @@
+[
+  { "redemption_id": "red-101", "entitlement_id": "ent-101", "flight_id": "FLT-DEMO-2", "manifest_id": "m-200", "idempotency_key": "k-101", "source": "scan", "redeemed_at": "2026-10-08T11:02:00+08:00" },
+  { "redemption_id": "red-102", "entitlement_id": "ent-102", "flight_id": "FLT-DEMO-2", "manifest_id": "m-200", "idempotency_key": "k-102", "source": "voucher_pos", "redeemed_at": "2026-10-08T12:20:00+08:00" }
+]

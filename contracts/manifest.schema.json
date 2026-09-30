@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "装载版本",
+  "type": "object",
+  "required": ["manifest_id", "flight_id", "version", "status", "created_stage", "lines", "batches"],
+  "properties": {
+    "manifest_id": { "type": "string", "pattern": "^m-[a-z0-9-]+$" },
+    "flight_id": { "type": "string", "minLength": 1 },
+    "version": { "type": "integer", "minimum": 1 },
+    "status": { "type": "string", "enum": ["superseded", "effective"] },
+    "supersedes": { "type": "string", "minLength": 1 },
+    "created_stage": {
+      "type": "string",
+      "enum": ["checkin_closed", "catering_loaded", "gate_final", "departed"]
+    },
+    "lines": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["pax_ref", "seat", "meal"],
+        "properties": {
+          "pax_ref": { "type": "string", "minLength": 1 },
+          "seat": { "type": "string", "minLength": 1 },
+          "meal": { "type": "string", "enum": ["standard", "child", "low_sugar", "premium", "none"] },
+          "allergens": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "redistribution": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["entitlement_id", "channel"],
+        "properties": {
+          "entitlement_id": { "type": "string", "minLength": 1 },
+          "channel": { "type": "string", "enum": ["onboard", "airport_voucher"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "batches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["batch_id", "supplier_id", "airport", "meal", "qty"],
+        "properties": {
+          "batch_id": { "type": "string", "pattern": "^bat-[a-z0-9-]+$" },
+          "supplier_id": { "type": "string", "minLength": 1 },
+          "airport": { "type": "string", "pattern": "^[A-Z]{3}$" },
+          "meal": { "type": "string", "enum": ["standard", "child", "low_sugar", "premium"] },
+          "qty": { "type": "integer", "minimum": 0 },
+          "replaces": { "type": "string", "minLength": 1 },
+          "replaced_by": { "type": "string", "minLength": 1 },
+          "covers_shortage_of": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

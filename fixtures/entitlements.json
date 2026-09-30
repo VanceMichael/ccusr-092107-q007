@@ -1,0 +1,9 @@
+[
+  { "entitlement_id": "ent-001", "flight_id": "FLT-DEMO-1", "pax_ref": "pax-a01", "kind": "standard", "status": "active", "value": { "unit": "meal", "amount": 1 }, "source": "booking" },
+  { "entitlement_id": "ent-002", "flight_id": "FLT-DEMO-1", "pax_ref": "pax-b02", "kind": "opt_out_miles", "status": "active", "value": { "unit": "points", "amount": 600 }, "source": "checkin" },
+  { "entitlement_id": "ent-003", "flight_id": "FLT-DEMO-1", "pax_ref": "pax-c03", "kind": "paid_upgrade", "status": "active", "value": { "unit": "cny", "amount": 128 }, "source": "checkin" },
+  { "entitlement_id": "ent-004", "flight_id": "FLT-DEMO-1", "pax_ref": "pax-d04", "kind": "special_child", "status": "active", "value": { "unit": "meal", "amount": 1 }, "guaranteed": true, "source": "booking" },
+  { "entitlement_id": "ent-005", "flight_id": "FLT-DEMO-1", "pax_ref": "pax-e05", "kind": "special_low_sugar", "status": "active", "value": { "unit": "meal", "amount": 1 }, "guaranteed": true, "source": "booking" },
+  { "entitlement_id": "ent-101", "flight_id": "FLT-DEMO-2", "pax_ref": "pax-f06", "kind": "standard", "status": "redeemed", "value": { "unit": "meal", "amount": 1 }, "source": "booking" },
+  { "entitlement_id": "ent-102", "flight_id": "FLT-DEMO-2", "pax_ref": "pax-f06", "kind": "delay_voucher", "status": "redeemed", "value": { "unit": "cny", "amount": 60 }, "source": "irregular_delay" }
+]

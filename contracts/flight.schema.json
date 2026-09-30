@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "航班",
+  "type": "object",
+  "required": ["flight_id", "route", "stage", "policy"],
+  "properties": {
+    "flight_id": { "type": "string", "pattern": "^FLT-[A-Z0-9-]+$" },
+    "route": {
+      "type": "object",
+      "required": ["origin", "destination"],
+      "properties": {
+        "origin": { "type": "string", "pattern": "^[A-Z]{3}$" },
+        "destination": { "type": "string", "pattern": "^[A-Z]{3}$" }
+      },
+      "additionalProperties": false
+    },
+    "stage": {
+      "type": "string",
+      "enum": ["checkin_closed", "catering_loaded", "gate_final", "departed"]
+    },
+    "delay_min": { "type": "integer", "minimum": 0 },
+    "policy": {
+      "type": "object",
+      "required": ["opt_out_miles", "opt_out_coupon_cny", "delay_threshold_min", "delay_voucher_cny", "upgrade_price_cny"],
+      "properties": {
+        "opt_out_miles": { "type": "integer", "minimum": 0 },
+        "opt_out_coupon_cny": { "type": "integer", "minimum": 0 },
+        "delay_threshold_min": { "type": "integer", "minimum": 0 },
+        "delay_voucher_cny": { "type": "integer", "minimum": 0 },
+        "upgrade_price_cny": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

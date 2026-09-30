@@ -1,0 +1,5 @@
+[
+  { "entry_id": "led-001", "entitlement_id": "ent-002", "pax_ref": "pax-b02", "flight_id": "FLT-DEMO-1", "unit": "points", "direction": "credit", "amount": 600, "kind": "points" },
+  { "entry_id": "led-002", "entitlement_id": "ent-003", "pax_ref": "pax-c03", "flight_id": "FLT-DEMO-1", "unit": "cny", "direction": "debit", "amount": 128, "kind": "payment" },
+  { "entry_id": "led-101", "entitlement_id": "ent-102", "pax_ref": "pax-f06", "flight_id": "FLT-DEMO-2", "unit": "cny", "direction": "credit", "amount": 60, "kind": "voucher" }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "manifest_id": "m-100",
+    "flight_id": "FLT-DEMO-1",
+    "version": 1,
+    "status": "superseded",
+    "created_stage": "checkin_closed",
+    "lines": [
+      { "pax_ref": "pax-a01", "seat": "12A", "meal": "standard" },
+      { "pax_ref": "pax-b02", "seat": "12B", "meal": "none" },
+      { "pax_ref": "pax-c03", "seat": "14C", "meal": "premium" },
+      { "pax_ref": "pax-d04", "seat": "15A", "meal": "child", "allergens": ["dairy"] },
+      { "pax_ref": "pax-e05", "seat": "15B", "meal": "low_sugar", "allergens": ["nuts"] }
+    ],
+    "batches": [
+      { "batch_id": "bat-01", "supplier_id": "sup-north", "airport": "XAA", "meal": "standard", "qty": 1 },
+      { "batch_id": "bat-02", "supplier_id": "sup-north", "airport": "XAA", "meal": "premium", "qty": 1 },
+      { "batch_id": "bat-03", "supplier_id": "sup-north", "airport": "XAA", "meal": "child", "qty": 1 },
+      { "batch_id": "bat-04", "supplier_id": "sup-north", "airport": "XAA", "meal": "low_sugar", "qty": 1 }
+    ]
+  },
+  {
+    "manifest_id": "m-101",
+    "flight_id": "FLT-DEMO-1",
+    "version": 2,
+    "status": "effective",
+    "supersedes": "m-100",
+    "created_stage": "catering_loaded",
+    "lines": [
+      { "pax_ref": "pax-a01", "seat": "12A", "meal": "standard" },
+      { "pax_ref": "pax-b02", "seat": "12B", "meal": "none" },
+      { "pax_ref": "pax-c03", "seat": "14C", "meal": "premium" },
+      { "pax_ref": "pax-d04", "seat": "15A", "meal": "child", "allergens": ["dairy"] },
+      { "pax_ref": "pax-e05", "seat": "15B", "meal": "low_sugar", "allergens": ["nuts"] }
+    ],
+    "batches": [
+      { "batch_id": "bat-01", "supplier_id": "sup-north", "airport": "XAA", "meal": "standard", "qty": 1 },
+      { "batch_id": "bat-02", "supplier_id": "sup-north", "airport": "XAA", "meal": "premium", "qty": 1 },
+      { "batch_id": "bat-03", "supplier_id": "sup-north", "airport": "XAA", "meal": "child", "qty": 1, "replaced_by": "bat-05" },
+      { "batch_id": "bat-05", "supplier_id": "sup-city", "airport": "XAA", "meal": "child", "qty": 1, "replaces": "bat-03" },
+      { "batch_id": "bat-04", "supplier_id": "sup-north", "airport": "XAA", "meal": "low_sugar", "qty": 0 },
+      { "batch_id": "bat-06", "supplier_id": "sup-hub", "airport": "XCC", "meal": "low_sugar", "qty": 1, "covers_shortage_of": "bat-04" }
+    ]
+  },
+  {
+    "manifest_id": "m-200",
+    "flight_id": "FLT-DEMO-2",
+    "version": 1,
+    "status": "effective",
+    "created_stage": "catering_loaded",
+    "lines": [
+      { "pax_ref": "pax-f06", "seat": "21C", "meal": "standard" }
+    ],
+    "batches": [
+      { "batch_id": "bat-201", "supplier_id": "sup-south", "airport": "XBB", "meal": "standard", "qty": 1 }
+    ]
+  }
+]

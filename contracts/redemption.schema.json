@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "权益兑现",
+  "type": "object",
+  "required": ["redemption_id", "entitlement_id", "flight_id", "manifest_id", "idempotency_key", "source"],
+  "properties": {
+    "redemption_id": { "type": "string", "pattern": "^red-[a-z0-9-]+$" },
+    "entitlement_id": { "type": "string", "minLength": 1 },
+    "flight_id": { "type": "string", "minLength": 1 },
+    "manifest_id": { "type": "string", "minLength": 1 },
+    "idempotency_key": { "type": "string", "minLength": 1 },
+    "source": { "type": "string", "enum": ["scan", "voucher_pos", "offline_backfill"] },
+    "redeemed_at": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}

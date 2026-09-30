@@ -1,0 +1,8 @@
+[
+  { "pax_ref": "pax-a01", "masked_name": "李*", "seat": "12A", "needs": [], "allergens": [] },
+  { "pax_ref": "pax-b02", "masked_name": "王*", "seat": "12B", "needs": [], "allergens": [] },
+  { "pax_ref": "pax-c03", "masked_name": "陈*", "seat": "14C", "needs": [], "allergens": [] },
+  { "pax_ref": "pax-d04", "masked_name": "赵*", "seat": "15A", "needs": ["child"], "allergens": ["dairy"] },
+  { "pax_ref": "pax-e05", "masked_name": "周*", "seat": "15B", "needs": ["low_sugar"], "allergens": ["nuts"] },
+  { "pax_ref": "pax-f06", "masked_name": "吴*", "seat": "21C", "needs": [], "allergens": [] }
+]

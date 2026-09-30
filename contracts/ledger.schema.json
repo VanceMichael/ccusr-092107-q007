@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "守恒账目",
+  "type": "object",
+  "required": ["entry_id", "entitlement_id", "pax_ref", "flight_id", "unit", "direction", "amount", "kind"],
+  "properties": {
+    "entry_id": { "type": "string", "pattern": "^led-[a-z0-9-]+$" },
+    "entitlement_id": { "type": "string", "minLength": 1 },
+    "pax_ref": { "type": "string", "minLength": 1 },
+    "flight_id": { "type": "string", "minLength": 1 },
+    "unit": { "type": "string", "enum": ["points", "cny"] },
+    "direction": { "type": "string", "enum": ["credit", "debit"] },
+    "amount": { "type": "number", "minimum": 0 },
+    "kind": { "type": "string", "enum": ["points", "payment", "refund", "coupon", "voucher"] }
+  },
+  "additionalProperties": false
+}

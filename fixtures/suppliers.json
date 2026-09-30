@@ -1,0 +1,6 @@
+[
+  { "supplier_id": "sup-north", "name": "北域航食（虚构）", "airports": ["XAA"], "capabilities": ["standard", "child", "low_sugar", "premium"] },
+  { "supplier_id": "sup-city", "name": "城市配餐（虚构）", "airports": ["XAA"], "capabilities": ["standard", "child"] },
+  { "supplier_id": "sup-south", "name": "南域航食（虚构）", "airports": ["XBB"], "capabilities": ["standard", "low_sugar"] },
+  { "supplier_id": "sup-hub", "name": "枢纽补配（虚构）", "airports": ["XCC"], "capabilities": ["standard", "low_sugar"] }
+]

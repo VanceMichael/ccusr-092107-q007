@@ -1,0 +1,27 @@
+[
+  {
+    "flight_id": "FLT-DEMO-1",
+    "route": { "origin": "XAA", "destination": "XBB" },
+    "stage": "gate_final",
+    "policy": {
+      "opt_out_miles": 600,
+      "opt_out_coupon_cny": 40,
+      "delay_threshold_min": 180,
+      "delay_voucher_cny": 60,
+      "upgrade_price_cny": 128
+    }
+  },
+  {
+    "flight_id": "FLT-DEMO-2",
+    "route": { "origin": "XBB", "destination": "XAA" },
+    "stage": "departed",
+    "delay_min": 205,
+    "policy": {
+      "opt_out_miles": 600,
+      "opt_out_coupon_cny": 40,
+      "delay_threshold_min": 180,
+      "delay_voucher_cny": 60,
+      "upgrade_price_cny": 128
+    }
+  }
+]

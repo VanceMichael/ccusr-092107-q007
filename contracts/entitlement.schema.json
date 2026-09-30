@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "餐食权益",
+  "type": "object",
+  "required": ["entitlement_id", "flight_id", "pax_ref", "kind", "status", "value", "source"],
+  "properties": {
+    "entitlement_id": { "type": "string", "pattern": "^ent-[a-z0-9-]+$" },
+    "flight_id": { "type": "string", "minLength": 1 },
+    "pax_ref": { "type": "string", "minLength": 1 },
+    "kind": {
+      "type": "string",
+      "enum": ["standard", "special_child", "special_low_sugar", "paid_upgrade", "opt_out_miles", "opt_out_coupon", "delay_voucher"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "redeemed", "refunded", "cancelled", "transferred"]
+    },
+    "value": {
+      "type": "object",
+      "required": ["unit", "amount"],
+      "properties": {
+        "unit": { "type": "string", "enum": ["meal", "points", "cny"] },
+        "amount": { "type": "number", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "guaranteed": { "type": "boolean" },
+    "source": {
+      "type": "string",
+      "enum": ["booking", "checkin", "irregular_delay", "merge_transfer", "offline_backfill"]
+    },
+    "transferred_from": { "type": "string", "minLength": 1 },
+    "idempotency_key": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}
