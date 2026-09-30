@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "航班契约",
+  "type": "object",
+  "required": ["flight_id", "date", "route", "stages"],
+  "properties": {
+    "flight_id": { "type": "string", "minLength": 1 },
+    "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "route": {
+      "type": "object",
+      "required": ["origin", "destination"],
+      "properties": {
+        "origin": { "type": "string", "minLength": 3 },
+        "destination": { "type": "string", "minLength": 3 }
+      },
+      "additionalProperties": false
+    },
+    "stages": {
+      "type": "object",
+      "required": ["checkin_closed", "catering_loaded", "gate_final", "takeoff"],
+      "properties": {
+        "checkin_closed": { "type": "string", "minLength": 1 },
+        "catering_loaded": { "type": "string", "minLength": 1 },
+        "gate_final": { "type": "string", "minLength": 1 },
+        "takeoff": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,10 @@
+{
+  "supplier_id": "SUP-PEK-01",
+  "airports": ["PEK"],
+  "supports_substitution": true,
+  "batches": [
+    { "batch_id": "B-STD-0901", "meal_type": "standard", "quantity": 180, "contains": ["gluten"] },
+    { "batch_id": "B-CHD-0901", "meal_type": "child", "quantity": 12, "contains": [] },
+    { "batch_id": "B-LSR-0901", "meal_type": "low_sugar", "quantity": 8, "contains": ["nut"] }
+  ]
+}

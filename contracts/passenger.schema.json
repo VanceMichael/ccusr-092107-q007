@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "脱敏旅客契约",
+  "description": "旅客记录只含匿名化标识与履约必需字段，禁止出现姓名、证件、联系方式等身份信息。",
+  "type": "object",
+  "required": ["passenger_key", "flight_id", "seat", "entitlements"],
+  "properties": {
+    "passenger_key": { "type": "string", "minLength": 1 },
+    "flight_id": { "type": "string", "minLength": 1 },
+    "seat": { "type": "string", "minLength": 1 },
+    "special_needs": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["child", "low_sugar"] }
+    },
+    "allergens": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "entitlements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "kind"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "kind": {
+            "type": "string",
+            "enum": ["standard_meal", "special_meal", "paid_upgrade", "opt_out_miles", "opt_out_coupon", "delay_voucher"]
+          },
+          "guaranteed": { "type": "boolean" },
+          "paid": { "type": "integer", "minimum": 0 },
+          "converts_to": {
+            "type": "object",
+            "required": ["account", "amount"],
+            "properties": {
+              "account": { "type": "string", "enum": ["miles", "coupon", "voucher", "cash"] },
+              "amount": { "type": "integer", "minimum": 1 }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

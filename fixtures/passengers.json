@@ -1,0 +1,42 @@
+[
+  {
+    "passenger_key": "pax-0001",
+    "flight_id": "CA1501",
+    "seat": "12A",
+    "special_needs": [],
+    "allergens": [],
+    "entitlements": [
+      { "id": "ent-0001", "kind": "opt_out_miles", "converts_to": { "account": "miles", "amount": 800 } }
+    ]
+  },
+  {
+    "passenger_key": "pax-0002",
+    "flight_id": "CA1501",
+    "seat": "14C",
+    "special_needs": [],
+    "allergens": [],
+    "entitlements": [
+      { "id": "ent-0002", "kind": "paid_upgrade", "paid": 120 }
+    ]
+  },
+  {
+    "passenger_key": "pax-0003",
+    "flight_id": "CA1501",
+    "seat": "21A",
+    "special_needs": ["child"],
+    "allergens": ["peanut"],
+    "entitlements": [
+      { "id": "ent-0003", "kind": "special_meal", "guaranteed": true }
+    ]
+  },
+  {
+    "passenger_key": "pax-0004",
+    "flight_id": "CA1501",
+    "seat": "22F",
+    "special_needs": ["low_sugar"],
+    "allergens": [],
+    "entitlements": [
+      { "id": "ent-0004", "kind": "delay_voucher", "converts_to": { "account": "voucher", "amount": 150 } }
+    ]
+  }
+]

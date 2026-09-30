@@ -1,0 +1,11 @@
+{
+  "flight_id": "CA1501",
+  "date": "2026-10-01",
+  "route": { "origin": "PEK", "destination": "CAN" },
+  "stages": {
+    "checkin_closed": "2026-10-01T07:30:00+08:00",
+    "catering_loaded": "2026-10-01T08:10:00+08:00",
+    "gate_final": "2026-10-01T08:40:00+08:00",
+    "takeoff": "2026-10-01T09:00:00+08:00"
+  }
+}
